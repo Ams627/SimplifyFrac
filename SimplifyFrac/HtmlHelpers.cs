@@ -2,11 +2,12 @@
 
 namespace SimplifyFrac
 {
-    class HtmlHelpers
+    internal class HtmlHelpers
     {
         public static void WriteHead(StreamWriter stream)
         {
             stream.WriteLine("<!doctype html>");
+            stream.WriteLine("<meta charset=\"utf-8\">");
             stream.WriteLine("<html lang=\"en\">");
             stream.WriteLine("<head>");
             stream.WriteLine("<title>Nothing</title>");
@@ -15,6 +16,11 @@ namespace SimplifyFrac
             stream.WriteLine("font-size:20pt;");
             stream.WriteLine("}");
             stream.WriteLine(".sumstable {");
+            //stream.WriteLine("text-align:center;");
+            stream.WriteLine("margin:0;");
+            stream.WriteLine("border-collapse:collapse;");
+            stream.WriteLine("}");
+            stream.WriteLine(".sumstable-two {");
             //stream.WriteLine("text-align:center;");
             stream.WriteLine("margin:0;");
             stream.WriteLine("border-collapse:collapse;");
@@ -39,19 +45,29 @@ namespace SimplifyFrac
             //stream.WriteLine("white-space: nowrap;");
             //stream.WriteLine("border:solid 1px #dddddd;");
             //stream.WriteLine("}");
-            stream.WriteLine(".sumstable,.sumstable td {");
-            stream.WriteLine("table-layout:fixed;");
-            //stream.WriteLine("padding-right:20px;");
-            //stream.WriteLine("color:#dddddd;");
-            //stream.WriteLine("white-space: nowrap;");
-            stream.WriteLine("border:solid 1px #dddddd;");
-            stream.WriteLine("height:3em;");
-            stream.WriteLine("padding-left:1em;");
-            stream.WriteLine("padding-right:1em;");
-            stream.WriteLine("padding-bottom:1em;");
-            stream.WriteLine("width:10em;");
-            stream.WriteLine("}");
+            stream.WriteLine("""
+                .sumstable,.sumstable td {
+                    table-layout:fixed;
+                    border:solid 1px #dddddd;
+                    height:3em;
+                    padding-left:1em;
+                    padding-right:1em;
+                    padding-bottom:1em;
+                    width:10em;
+                }
+                """);
 
+            stream.WriteLine("""
+                .sumstable-two,.sumstable-two td {
+                    table-layout:fixed;
+                    border:solid 1px #dddddd;
+                    height:3em;
+                    padding-left:1em;
+                    padding-right:1em;
+                    padding-bottom:1em;
+                    width:15em;
+                }
+                """);
 
             stream.WriteLine(".gcdtable {");
             //stream.WriteLine("text-align:center;");

@@ -4,5 +4,9 @@
     <TargetFramework>net6.0</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <DebugType>Embedded</DebugType>
+    <LangVersion>Latest</LangVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Rationals" Version="2.1.0" />
+  </ItemGroup>
 </Project>
